@@ -1,0 +1,15 @@
+D:\Visual_studio_project\FInalProject\FastFoodPOS\obj\Debug\FastFoodPOS.csproj.AssemblyReference.cache
+D:\Visual_studio_project\FInalProject\FastFoodPOS\obj\Debug\FastFoodPOS.DineOptionForm.resources
+D:\Visual_studio_project\FInalProject\FastFoodPOS\obj\Debug\FastFoodPOS.StartForm.resources
+D:\Visual_studio_project\FInalProject\FastFoodPOS\obj\Debug\FastFoodPOS.MenuForm.resources
+D:\Visual_studio_project\FInalProject\FastFoodPOS\obj\Debug\FastFoodPOS.Properties.Resources.resources
+D:\Visual_studio_project\FInalProject\FastFoodPOS\obj\Debug\FastFoodPOS.csproj.GenerateResource.cache
+D:\Visual_studio_project\FInalProject\FastFoodPOS\obj\Debug\FastFoodPOS.csproj.CoreCompileInputs.cache
+D:\Visual_studio_project\FInalProject\FastFoodPOS\bin\Debug\FastFoodPOS.exe.config
+D:\Visual_studio_project\FInalProject\FastFoodPOS\bin\Debug\FastFoodPOS.exe
+D:\Visual_studio_project\FInalProject\FastFoodPOS\bin\Debug\FastFoodPOS.pdb
+D:\Visual_studio_project\FInalProject\FastFoodPOS\obj\Debug\FastFoodPOS.exe
+D:\Visual_studio_project\FInalProject\FastFoodPOS\obj\Debug\FastFoodPOS.pdb
+D:\Visual_studio_project\FInalProject\FastFoodPOS\obj\Debug\FastFoodPOS.OrderConfirmationForm.resources
+D:\Visual_studio_project\FInalProject\FastFoodPOS\obj\Debug\FastFoodPOS.EWalletForm.resources
+D:\Visual_studio_project\FInalProject\FastFoodPOS\obj\Debug\FastFoodPOS.PaymentForm.resources
