@@ -1,0 +1,60 @@
+﻿@page
+@model WebStaff.Pages.GiftsModel
+@{
+    ViewData["Title"] = "Manage Gifts";
+}
+
+@using Microsoft.AspNetCore.Authorization
+
+@* Add this to ensure redirection to login page if user is not authenticated *@
+@attribute [Authorize]
+
+<h2>Manage Gifts</h2>
+
+<div class="container">
+    <form method="post">
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" id="Name" name="Name" required />
+        </div>
+        <div class="form-group">
+            <label for="Description">Description</label>
+            <input type="text" class="form-control" id="Description" name="Description" />
+        </div>
+        <div class="form-group">
+            <label for="Price">Price</label>
+            <input type="number" class="form-control" id="Price" name="Price" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Gift</button>
+    </form>
+
+    <hr />
+
+    <h3>Existing Gifts</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var gift in Model.GiftList)
+            {
+                <tr>
+                    <td>@gift.Name</td>
+                    <td>@gift.Description</td>
+                    <td>@gift.Price</td>
+                    <td>
+                        <form method="post" asp-page-handler="Delete" asp-route-id="@gift.Id" style="display:inline;">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

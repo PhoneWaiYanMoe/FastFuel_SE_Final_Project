@@ -1,0 +1,70 @@
+﻿@page
+@model WebStaff.Pages.VouchersModel
+@{
+    ViewData["Title"] = "Vouchers";
+}
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    // Redirect unauthenticated users to the login page
+    if (!HttpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+    {
+        Response.Redirect("/Login");
+        return;
+    }
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">List of Vouchers</h2>
+
+    <form method="post" asp-page-handler="AddVoucher" class="mb-4">
+        <div class="form-group">
+            <label for="VoucherCode">Voucher Code:</label>
+            <input type="text" asp-for="VoucherCode" class="form-control" placeholder="Enter voucher code" />
+        </div>
+        <div class="form-group">
+            <label for="Valuess">Value:</label>
+            <input type="number" asp-for="Valuess" class="form-control" placeholder="Enter value" />
+        </div>
+        <div class="form-group">
+            <label for="MinimumPurchaseAmount">Minimum Purchase Amount:</label>
+            <input type="number" asp-for="MinimumPurchaseAmount" class="form-control" placeholder="Enter minimum purchase amount" step="0.01" />
+        </div>
+        <div class="form-group">
+            <label for="Description">Description:</label>
+            <textarea asp-for="Description" class="form-control" placeholder="Enter description"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Voucher</button>
+    </form>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Voucher ID</th>
+                <th scope="col">Voucher Code</th>
+                <th scope="col">Value</th>
+                <th scope="col">Minimum Purchase Amount</th>
+                <th scope="col">Description</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var voucher in Model.VoucherList)
+            {
+                <tr>
+                    <td>@voucher.VoucherId</td>
+                    <td>@voucher.VoucherCode</td>
+                    <td>@voucher.Valuess</td>
+                    <td>@voucher.MinimumPurchaseAmount</td>
+                    <td>@voucher.Description</td>
+                    <td>
+                        <form method="post" asp-page-handler="DeleteVoucher" asp-route-id="@voucher.VoucherId" style="display:inline;">
+                            <input type="hidden" name="voucherId" value="@voucher.VoucherId" />
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

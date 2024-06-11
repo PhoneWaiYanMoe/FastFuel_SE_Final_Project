@@ -1,0 +1,42 @@
+﻿@page "{id:int}"
+@model WebStaff.Pages.EditModel
+
+<h2>Edit Agent</h2>
+
+<form method="post">
+    <!-- Hidden field to hold the ID -->
+    <input type="hidden" asp-for="AgentEdit.Id" />
+
+    <div class="form-group">
+        <label asp-for="AgentEdit.Name"></label>
+        <input asp-for="AgentEdit.Name" class="form-control" />
+        <span asp-validation-for="AgentEdit.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AgentEdit.Email"></label>
+        <input asp-for="AgentEdit.Email" class="form-control" />
+        <span asp-validation-for="AgentEdit.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AgentEdit.Password"></label>
+        <input asp-for="AgentEdit.Password" class="form-control" />
+        <span asp-validation-for="AgentEdit.Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AgentEdit.Location"></label>
+        <input asp-for="AgentEdit.Location" class="form-control" />
+        <span asp-validation-for="AgentEdit.Location" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AgentEdit.CreationDate"></label>
+        <input asp-for="AgentEdit.CreationDate" class="form-control" />
+        <span asp-validation-for="AgentEdit.CreationDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AgentEdit.Description"></label>
+        <input asp-for="AgentEdit.Description" class="form-control" />
+        <span asp-validation-for="AgentEdit.Description" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="./Index" class="btn btn-secondary">Cancel</a>
+</form>

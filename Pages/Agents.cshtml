@@ -1,0 +1,52 @@
+﻿@page
+@model WebStaff.Pages.AgentsModel
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    // Redirect unauthenticated users to the login page
+    if (!HttpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+    {
+        Response.Redirect("/Login");
+        return;
+    }
+}
+
+<br />
+<h2>List of Agents</h2>
+
+<a asp-page="./Add" class="btn btn-primary mb-3">Add New Agent</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Location</th>
+            <th>Creation Date</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var agent in Model.listAgents)
+        {
+            <tr>
+                <td>@agent.Name</td>
+                <td>@agent.Email</td>
+                <td>@agent.Password</td>
+                <td>@agent.Location</td>
+                <td>@agent.CreationDate.ToShortDateString()</td>
+                <td>@agent.Description</td>
+                <td>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@agent.Id" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                    <form method="get" asp-page="Edit" asp-route-id="@agent.Id" style="display:inline;">
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

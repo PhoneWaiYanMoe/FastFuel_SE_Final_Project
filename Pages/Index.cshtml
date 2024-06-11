@@ -1,0 +1,90 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Staff Page";
+}
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap" />
+<style>
+    .jumbotron-custom {
+        background-color: #ffcc00;
+        color: #333;
+        padding: 2rem;
+        text-align: center;
+    }
+
+        .jumbotron-custom h1 {
+            font-family: 'Lobster', cursive;
+            color: #ff5733;
+        }
+
+        .jumbotron-custom p.lead {
+            font-size: 1.5em;
+            color: #c70039;
+        }
+
+        .jumbotron-custom .btn {
+            background-color: #900C3F;
+            border-color: #900C3F;
+            transition: transform 0.2s;
+        }
+
+            .jumbotron-custom .btn:hover {
+                transform: scale(1.1);
+            }
+
+    .card-custom {
+        border-color: #ff5733;
+    }
+
+        .card-custom .card-body {
+            background-color: #ffcccb;
+        }
+
+        .card-custom h2 {
+            color: #c70039;
+        }
+
+        .card-custom p {
+            font-family: 'Roboto', sans-serif;
+        }
+</style>
+
+<div class="jumbotron jumbotron-custom">
+    <h1 class="display-4">Welcome, Fast Fuel Staff</h1>
+    <p class="lead">Manage Agents, Vouchers, and Menu</p>
+    <hr class="my-4" style="border-color: #900C3F;">
+    <p>Efficiently manage agents, distribute vouchers, and update the menu to keep Fast Fuel running smoothly.</p>
+    <a class="btn btn-primary btn-lg" href="/Agents" role="button">Manage Agents</a>
+    <a class="btn btn-primary btn-lg" href="/Vouchers" role="button">Distribute Vouchers</a>
+    <a class="btn btn-primary btn-lg" href="/Menu" role="button">Edit Menu</a>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <div class="card card-custom">
+                <div class="card-body">
+                    <h2>Manage Agents</h2>
+                    <p>View, add, or update information about Fast Fuel agents.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="card card-custom">
+                <div class="card-body">
+                    <h2>Distribute Vouchers</h2>
+                    <p>Generate and distribute vouchers to customers for promotions or rewards.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="card card-custom">
+                <div class="card-body">
+                    <h2>Edit Menu</h2>
+                    <p>Update the menu items, prices, and descriptions as needed.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
